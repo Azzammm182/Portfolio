@@ -1,0 +1,210 @@
+/* =========================================================
+   NAVBAR — adaptive untuk laptop & handphone
+   ========================================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(5, 5, 5, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  padding-top: env(safe-area-inset-top);
+}
+
+.navbar.scrolled {
+  background-color: rgba(5, 5, 5, 0.94);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.logo-blue {
+  color: var(--accent-blue);
+}
+
+.nav-menu {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2.2rem);
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-blue);
+  border-radius: 2px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* ---------- Language switch ---------- */
+.lang-switch {
+  display: flex;
+  background-color: #1a1a1a;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  padding: 3px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  padding: 5px 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+}
+
+.lang-btn.active {
+  background-color: var(--accent-blue);
+  color: white;
+}
+
+/* ---------- Hamburger (hanya mobile) ---------- */
+.hamburger {
+  display: none;
+  background: #1a1a1a;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+}
+
+.hamburger:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+/* ---------- Mobile menu ---------- */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: calc(var(--header-height) + env(safe-area-inset-top));
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(5, 5, 5, 0.98);
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  z-index: 999;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-link {
+  display: block;
+  padding: 1rem 1.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: 14px;
+  transition: all 0.25s;
+}
+
+.mobile-link:hover,
+.mobile-link.active {
+  color: var(--text-primary);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.mobile-link.active {
+  color: var(--accent-blue);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+  }
+
+  .lang-btn {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .lang-switch {
+    display: none;
+  }
+}

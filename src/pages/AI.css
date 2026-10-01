@@ -1,0 +1,352 @@
+/* =========================================================
+   AI PAGE — adaptive untuk laptop & handphone
+   ========================================================= */
+.ai-page {
+  min-height: 100vh;
+  padding-top: calc(var(--header-height) + 3.5rem);
+  padding-bottom: 4rem;
+}
+
+.ai-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ai-header-icon {
+  width: 82px;
+  height: 82px;
+  background: linear-gradient(135deg, var(--accent-blue), #8b5cf6);
+  color: white;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  animation: pulse 2.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  50% { box-shadow: 0 0 0 22px rgba(59, 130, 246, 0); }
+}
+
+.ai-title {
+  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.ai-subtitle {
+  color: var(--accent-blue);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.ai-intro {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ---------- Sections ---------- */
+.ai-section {
+  margin-bottom: 4rem;
+}
+
+.ai-section-title {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 700;
+}
+
+.ai-section-title svg {
+  color: var(--accent-blue);
+}
+
+/* ---------- Focus cards ---------- */
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.focus-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  transition: all 0.3s ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 14px 35px rgba(59, 130, 246, 0.12);
+}
+
+.focus-icon {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--accent-blue);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.focus-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.focus-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* ---------- Roadmap ---------- */
+.roadmap-container {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.roadmap-container::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-blue), var(--border-color));
+}
+
+.roadmap-item {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+}
+
+.roadmap-dot {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  position: relative;
+  left: -32px;
+  z-index: 2;
+}
+
+.roadmap-item.done .roadmap-dot {
+  background-color: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: white;
+}
+
+.roadmap-item.active .roadmap-dot {
+  background-color: var(--card-bg);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  animation: pulse 2.2s infinite;
+}
+
+.roadmap-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.roadmap-phase {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.roadmap-item.done .roadmap-phase {
+  color: var(--accent-blue);
+}
+
+.roadmap-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* ---------- Tools grid ---------- */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tool-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-3px);
+}
+
+.tool-icon {
+  font-size: 1.5rem;
+}
+
+.tool-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+/* ---------- Goal ---------- */
+.ai-goal {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid var(--accent-blue);
+  border-radius: 20px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: center;
+}
+
+.goal-icon {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  background-color: var(--accent-blue);
+  color: white;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goal-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.goal-desc {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+
+.goal-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.status-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.status-value {
+  background-color: var(--accent-blue);
+  color: white;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 968px) {
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ai-goal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .goal-status {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-page {
+    padding-top: calc(var(--header-height) + 2.5rem);
+  }
+
+  .ai-header-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+  }
+
+  .ai-subtitle {
+    font-size: 1rem;
+  }
+
+  .ai-intro {
+    font-size: 0.92rem;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap-container {
+    padding-left: 1.5rem;
+  }
+
+  .roadmap-item {
+    gap: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  .roadmap-phase {
+    font-size: 0.98rem;
+  }
+
+  .goal-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 14px;
+  }
+
+  .goal-title {
+    font-size: 1.2rem;
+  }
+}
